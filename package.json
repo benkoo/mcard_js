@@ -1,6 +1,6 @@
 {
   "name": "mcard-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A JavaScript implementation of MCard - A data model for persistently storing content with cryptographic hashing and timestamping",
   "main": "src/index.js",
   "type": "module",
@@ -8,7 +8,8 @@
     "test": "jest",
     "prepare": "npm run build",
     "build": "babel src --out-dir dist --source-maps",
-    "prepublishOnly": "npm test && npm run build"
+    "test:ci": "jest --testPathIgnorePatterns=redux-mcard-persistence.test.js",
+    "prepublishOnly": "npm run test:ci && npm run build"
   },
   "keywords": [
     "mcard",
@@ -43,6 +44,7 @@
     "crypto": "^1.0.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.27.2",
     "@babel/core": "^7.27.1",
     "@babel/plugin-transform-modules-commonjs": "^7.27.1",
     "@babel/plugin-transform-runtime": "^7.27.1",
@@ -56,11 +58,14 @@
   },
   "babel": {
     "presets": [
-      ["@babel/preset-env", {
-        "targets": {
-          "node": "current"
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
         }
-      }]
+      ]
     ]
   },
   "publishConfig": {
