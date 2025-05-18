@@ -1,23 +1,43 @@
 {
-  "name": "@benkoo/mcard",
-  "version": "0.1.0",
-  "description": "Monadic Card library",
-  "main": "index.js",
+  "name": "mcard-js",
+  "version": "1.0.0",
+  "description": "A JavaScript implementation of MCard - A data model for persistently storing content with cryptographic hashing and timestamping",
+  "main": "src/index.js",
+  "type": "module",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "prepare": "npm run build",
+    "build": "babel src --out-dir dist --source-maps",
+    "prepublishOnly": "npm test && npm run build"
   },
   "keywords": [
-    "monad",
-    "card",
-    "functional"
+    "mcard",
+    "data-model",
+    "cryptography",
+    "hashing",
+    "timestamping",
+    "persistence",
+    "storage"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Ben Koo <benkoo@example.com> (https://github.com/benkoo)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benkoo/mcard_js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/benkoo/mcard_js/issues"
+  },
+  "homepage": "https://github.com/benkoo/mcard_js#readme",
   "files": [
+    "dist",
     "src",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
-  "type": "module",
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "dependencies": {
     "buffer": "^6.0.3",
     "crypto": "^1.0.1"
@@ -36,7 +56,14 @@
   },
   "babel": {
     "presets": [
-      "@babel/preset-env"
+      ["@babel/preset-env", {
+        "targets": {
+          "node": "current"
+        }
+      }]
     ]
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
