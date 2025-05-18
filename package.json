@@ -1,0 +1,42 @@
+{
+  "name": "@benkoo/mcard",
+  "version": "0.1.0",
+  "description": "Monadic Card library",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "monad",
+    "card",
+    "functional"
+  ],
+  "author": "",
+  "license": "ISC",
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "type": "module",
+  "dependencies": {
+    "buffer": "^6.0.3",
+    "crypto": "^1.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.27.1",
+    "@babel/plugin-transform-modules-commonjs": "^7.27.1",
+    "@babel/plugin-transform-runtime": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
+    "@babel/register": "^7.27.1",
+    "@babel/runtime": "^7.27.1",
+    "babel-jest": "^29.7.0",
+    "better-sqlite3": "^11.10.0",
+    "jest": "^29.7.0",
+    "sqlite3": "^5.1.7"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  }
+}
